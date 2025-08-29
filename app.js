@@ -59,5 +59,11 @@ app.post("/bfhl", (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Server is live! Use POST /bfhl with JSON body."
+  });
+});
+
 
 module.exports = app;
