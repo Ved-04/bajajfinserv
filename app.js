@@ -1,6 +1,5 @@
 const express = require("express");
 
-
 const app = express();
 app.use(express.json());
 
@@ -40,16 +39,14 @@ app.post("/bfhl", (req, res) => {
       .join("")
       .split("")
       .reverse()
-      .map((ch, idx) =>
-        idx % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase()
-      )
+      .map((ch, idx) => (idx % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase()))
       .join("");
 
     res.json({
       is_success: true,
-      user_id: "vedangurade", 
-      email: "vedangurade4945@gmail.com",       
-      roll_number: "22BCE0194",      
+      user_id: "vedangurade",
+      email: "vedangurade4945@gmail.com",
+      roll_number: "22BCE0194",
       odd_numbers,
       even_numbers,
       alphabets,
@@ -62,4 +59,5 @@ app.post("/bfhl", (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+
+module.exports = app;
