@@ -3,14 +3,12 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-// ✅ GET route for testing in browser
 app.get("/bfhl", (req, res) => {
   res.json({
     operation_code: 1
   });
 });
 
-// ✅ POST route (main logic)
 app.post("/bfhl", (req, res) => {
   try {
     const { data } = req.body;
@@ -67,4 +65,7 @@ app.post("/bfhl", (req, res) => {
   }
 });
 
-module.exports = app;
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
