@@ -36,7 +36,6 @@ app.post("/bfhl", (req, res) => {
       }
     });
 
-    // Concatenation logic: reverse all letters and alternate caps
     let concat_string = lettersOnly
       .join("")
       .split("")
@@ -48,9 +47,9 @@ app.post("/bfhl", (req, res) => {
 
     res.json({
       is_success: true,
-      user_id: "john_doe_17091999", // replace with your full name + DOB
-      email: "john@xyz.com",       // replace with your email
-      roll_number: "ABCD123",      // replace with your roll number
+      user_id: "vedangurade", 
+      email: "vedangurade4945@gmail.com",       
+      roll_number: "22BCE0194",      
       odd_numbers,
       even_numbers,
       alphabets,
