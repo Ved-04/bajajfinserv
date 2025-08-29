@@ -3,6 +3,14 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+// ✅ GET route for testing in browser
+app.get("/bfhl", (req, res) => {
+  res.json({
+    operation_code: 1
+  });
+});
+
+// ✅ POST route (main logic)
 app.post("/bfhl", (req, res) => {
   try {
     const { data } = req.body;
@@ -58,12 +66,5 @@ app.post("/bfhl", (req, res) => {
     res.status(500).json({ is_success: false, message: err.message });
   }
 });
-
-app.get("/", (req, res) => {
-  res.json({
-    message: "Server is live! Use POST /bfhl with JSON body."
-  });
-});
-
 
 module.exports = app;
